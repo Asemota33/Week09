@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Week09
 {
-    public partial class Form1 : Form
+    public partial class CalculateForm : Form
     {
-        public Form1()
+        public CalculateForm()
         {
             InitializeComponent();
         }
