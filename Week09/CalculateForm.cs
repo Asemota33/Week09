@@ -26,7 +26,7 @@ namespace Week09
         }
 
         /// <summary>
-        /// This is the chared Event handler for all the calculator buttons click event
+        /// This is the Event handler for all the calculator buttons click event
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -47,7 +47,7 @@ namespace Week09
                     maxsize = 5;
                 }
 
-                if (outputString != string.Empty && resultLabel.Text.Count() < maxsize)
+                if (outputString != "0" && resultLabel.Text.Count() < maxsize)
                 {
                     outputString += tag;
                     resultLabel.Text = outputString;
@@ -82,10 +82,10 @@ namespace Week09
         {
             if (!decimalExists)
             {
-                if (resultLabel.Text == "0")
-                {
-                    outputString += "0";
-                }
+               // if (resultLabel.Text == "0")
+                //{
+                  //  outputString += "0";
+                //}
                 outputString += ".";
                 decimalExists = true;
             }
@@ -101,8 +101,7 @@ namespace Week09
                 outputString = "0";
             }
             heightLabel.Text = outputString.ToString();
-            ClearNumericKeyboard();
-            removeLastCharacterFromResultLabel();
+            ClearNumericKeyboard(); 
             calculatorButtonTableLayoutPanel.Visible = false;
         }
 
@@ -113,8 +112,6 @@ namespace Week09
         {
             if (outputString.Length > 0)
             {
-
-
                 var lastChar = outputString.Substring(outputString.Length - 1);
                 if (lastChar == ".")
                 {
@@ -138,7 +135,6 @@ namespace Week09
             outputString = string.Empty;
             decimalExists = false;
             outputValue = 0;
-           
         }
 
         /// <summary>
@@ -149,7 +145,7 @@ namespace Week09
         private void CalculateForm_Load(object sender, EventArgs e)
         {
             ClearNumericKeyboard();
-            calculatorButtonTableLayoutPanel.Visible = true;
+            //calculatorButtonTableLayoutPanel.Visible = true;
         }
 
         /// <summary>
